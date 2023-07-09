@@ -34,7 +34,7 @@ To effectively utilize the **Zendesk Toolkit**, follow the steps outlined below:
 2. Logging in to your Zendesk account:
 
     * **Subdomain**
-        - Once the toolkit is opened, it will asked for the subdomain of your company:
+        - Once the toolkit is opened, it will ask for the subdomain of your company:
             ```cmd
             Please enter your subdomain (e.g. https://{subdomain}.zendesk.com):
             ```
@@ -110,7 +110,7 @@ To effectively utilize the **Zendesk Toolkit**, follow the steps outlined below:
         - This action will initiate an upload sequence for all the tickets that were previously backed up by the toolkit.
         - A progress bar will show to indicate the progress of completion:
             ```cmd
-            Restore progress: 0/100:  35%|                  | 300/866 [00:00<00:12, 0.0 ticket(s)/s]
+            Restore progress: 0/100:  0%|                  | 300/866 [00:00<00:12, 0.0 ticket(s)/s]
             ```
 
         > Note: This action will not restore tickets existing in your Zendesk tickets 
