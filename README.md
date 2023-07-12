@@ -192,11 +192,11 @@ Try these actions if you experience problems with **Zendesk Toolkit**:
     - Run the **Backup Tickets** action again to restore the contents
 
 - Check if your Zendesk account enabled the API integration using email and password:
-    - Go to the admin center of your administration
-    - Click on the search bar on the left sidebar of the admin center.
-    - Search for **Zendesk API** and click on the result.
-    - Under **Settings**, check if **Password access** is enabled.
-    - Enable this toggle button if disabled.
+    - Go to the **Admin Center** of your administration
+    - Click on the search bar on the left sidebar of the **Admin Center**
+    - Search for **Zendesk API** and click on the result
+    - Under **Settings**, check if **Password access** is enabled
+    - Enable this toggle button if disabled
     - Make sure to disable this setting once you're done using with **Zendesk Toolkit**
 
 ## Feedback
