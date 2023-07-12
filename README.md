@@ -1,22 +1,14 @@
-# Zendesk Toolkit User Manual
+# Zendesk Toolkit
 
 #### Author(s): Leo Medalla, Shan Seneca
 
-<br>
-
 ## Introduction
-
----
 
 Welcome to the **Zendesk Toolkit User Manual**! This manual will guide you through the installation, setup, and usage of Zendesk Toolkit, a powerful Python script designed to assist Zendesk administrators in managing their ticket records efficiently. With the Zendesk Toolkit, you can easily back up and restore your Zendesk tickets, ensuring the safety and accessibility of your valuable customer support data, extending work lifetime, and provide counter-measures against sudden errors and accidents.
 
 The Zendesk Toolkit consists of two main modules: the **Backup** module and the **Restore** module. The backup module enables you to download all the existing tickets from your Zendesk subdomain and store them in a JSON file that can be found in the root directory. On the other hand, the restore module allows you to upload previously backed up tickets back into your Zendesk subdomain, ensuring seamless data recovery and migration. Whether you need to back up your ticket data for safekeeping or restore previously saved tickets, the Zendesk Toolkit is here to streamline your workflow and ensure the smooth management of your Zendesk account.
 
-<br>
-
 ## Getting Started
-
----
 
 Please ensure that you have Python installed on your system. Additionally, make sure to review the **requirements.txt** file provided with the toolkit. This file lists the third-party modules required by the Zendesk Toolkit. To install these dependencies, you can run the **install_requirements.py** script, which will automatically download and set up the necessary modules. If you already have the required modules installed, you may skip this step.
 
@@ -24,11 +16,7 @@ Once you have completed the installation of the required dependencies, you are r
 
 > *Note: Please make sure not to change anything in the **MyZendeskApp.py** file to avoid errors. If you need any changes, please contact us or any assigned developer.*
 
-<br>
-
 ## Usage
-
----
 
 To effectively utilize the **Zendesk Toolkit**, follow the steps outlined below:
 
@@ -46,7 +34,7 @@ To effectively utilize the **Zendesk Toolkit**, follow the steps outlined below:
 2. Logging in to your Zendesk account:
 
     * **Subdomain**
-        - Once the toolkit is opened, it will asked for the subdomain of your company:
+        - Once the toolkit is opened, it will ask for the subdomain of your company:
             ```cmd
             Please enter your subdomain (e.g. https://{subdomain}.zendesk.com):
             ```
@@ -122,7 +110,7 @@ To effectively utilize the **Zendesk Toolkit**, follow the steps outlined below:
         - This action will initiate an upload sequence for all the tickets that were previously backed up by the toolkit.
         - A progress bar will show to indicate the progress of completion:
             ```cmd
-            Restore progress: 0/100:  35%|                  | 300/866 [00:00<00:12, 0.0 ticket(s)/s]
+            Restore progress: 0/100:  0%|                  | 300/866 [00:00<00:12, 0.0 ticket(s)/s]
             ```
 
         > Note: This action will not restore tickets existing in your Zendesk tickets 
@@ -137,17 +125,9 @@ To effectively utilize the **Zendesk Toolkit**, follow the steps outlined below:
         - This action will simply display the number of tickets that the toolkit has in the **backup.json** file.
         - Useful in validating **Backup Tickets**
 
-<br>
-
 ## Package Files and Uses
 
----
-
-<br>
-
-## **backup.json** 
-
-<br>
+### **backup.json** 
 
 This file  is a JSON-formatted storage file used by **Zendesk Toolkit** to store all the backed up tickets from your Zendesk account. When you initiate the backup process using the toolkit, the script retrieves all existing tickets from your Zendesk subdomain and saves them in this file for future reference and restoration. 
 
@@ -172,11 +152,7 @@ The properties stored for each ticket may include:
 
 > **Important**: Remember to keep **backup.json** file in a secure location to prevent unauthorized access and ensure the integrity of your ticket data as this file can be easily accessed and manipulated.
 
-<br>
-
-## **install_requirements.py**
-
-<br>
+### **install_requirements.py**
 
 This file is a python script provided with **Zendesk Toolkit** that simplifies the process of installing the necessary third-party modules or dependencies required by the toolkit. This script automates the installation procedure, ensuring that all the required modules are correctly set up in your Python environment.
 
@@ -186,35 +162,19 @@ When you initially set up the **Zendesk Toolkit**, it is essential to review the
 >
 > If your package manager is not supported, please consult us or any assigned developer to install the requirements specified by the **requirements.txt** for you.
 
-<br>
-
-## **main.py**
-
-<br>
+### **main.py**
 
 This file is the main entry point of **Zendesk Toolkit**. It handles the entire program flow, providing a console user interface and orchestrating the functionality of the toolkit. The script interacts with the **MyZendeskApp.py** helper module to perform various operations related to ticket management in Zendesk.
 
-<br>
-
-## **MyZendeskApp.py**
-
-<br>
+### **MyZendeskApp.py**
 
 This file is the most important file as this file contains the class functions that handles the backup and restore functionality of **Zendesk Toolkit**. Deletion of this file will permanently damage **Zendesk Toolkit**. 
 
-<br>
-
-## **requirements.txt**
-
-<br>
+### **requirements.txt**
 
 This file lists the third-party modules required by the **Zendesk Toolkit**. Failure in installing these requirements will prevent the main script from functioning properly.
 
-<br>
-
 ## Troubleshooting
-
----
 
 Try these actions if you experience problems with **Zendesk Toolkit**:
 - Ensure your Python version is greater than or equal to 3.0 by typing the command into your command prompt or shell:  
@@ -231,19 +191,11 @@ Try these actions if you experience problems with **Zendesk Toolkit**:
     - Delete all contents of **backup.json** and replace it with a pair of square brackets
     - Run the **Backup Tickets** action again to restore the contents
 
-<br>
-
 ## Feedback
-
----
 
 - Have questions? Contact us at: [leomedalla1986@gmail.com](), [shnmyklsnc@gmail.com]()
 - File a bug in [Github Issues](https://github.com/shshshshshan/ZendeskToolkit/issues)
 
-<br>
-
 ## License
-
----
 
 ## [Apache License 2.0](https://github.com/shshshshshan/ZendeskToolkit/blob/master/LICENSE)
