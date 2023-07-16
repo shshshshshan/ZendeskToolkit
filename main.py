@@ -1,15 +1,18 @@
 from MyZendeskApp import Zendesk
 from getpass import getpass
+import re
 
 def prompt_login() -> tuple[str, str]:
-    username = password = None
+    email = password = None
 
-    while not username:    
-        username = input('Enter your account email: ')
+    rfc5322 = r"^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
 
-        if username == '':
-            print('\n* Email cannot be empty *')
-            username = None
+    while not email:    
+        email = input('Enter your account email: ')
+
+        if email == '' or not re.match(rfc5322, email):
+            print('\n* Email is invalid *')
+            email = None
 
     while not password:    
         password = getpass('Enter your account password: ')
@@ -19,7 +22,7 @@ def prompt_login() -> tuple[str, str]:
             password = None
 
 
-    return username, password
+    return email, password
 
 def prompt_subdomain() -> str:
     subdomain = None
@@ -31,13 +34,13 @@ def prompt_subdomain() -> str:
             print('\n * Please enter a valid subdomain *')
             subdomain = None
 
-    return subdomain
+    return subdomain.strip().lower()
 
 def welcome():
     print('\nWelcome to Zendesk Toolkit\n')
 
-def validate_credentials(zendesk: Zendesk, username: str, password: str):
-    if not zendesk.login(username, password):
+def validate_credentials(zendesk: Zendesk, email: str, password: str):
+    if not zendesk.login(email, password):
         print('Could not authenticate you')
         return False
     
@@ -69,8 +72,8 @@ def main():
     subdomain = prompt_subdomain()
     my_zendesk = Zendesk(subdomain)
 
-    username, password = prompt_login()
-    if not validate_credentials(my_zendesk, username, password):
+    email, password = prompt_login()
+    if not validate_credentials(my_zendesk, email, password):
         exit()
 
     choice = menu()
