@@ -14,6 +14,10 @@ class Zendesk:
         self.subdomain = subdomain
         self.domain = f'https://{subdomain}.zendesk.com'
 
+        # Session is initialized by login()
+        self.session = None
+
+        # Check if backup file is present
         self.__initBackupFile__()
 
     def __initBackupFile__(self) -> None:
