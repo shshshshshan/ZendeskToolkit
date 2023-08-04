@@ -5,6 +5,7 @@ import re
 def prompt_login() -> tuple[str, str]:
     email = password = None
 
+    # Email validation supported by RFC 5322
     rfc5322 = r"^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
 
     while not email:    
